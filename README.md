@@ -3,4 +3,4 @@ Build a RAG chatbot in LangChain that uses Neo4j to retrieve data about the pati
 
 # Links
 - [Build an LLM RAG Chatbot With LangChain](https://realpython.com/build-llm-rag-chatbot-with-langchain/)
-- 
+- [Source code](https://github.com/realpython/materials/tree/master/langchain-rag-app/)
