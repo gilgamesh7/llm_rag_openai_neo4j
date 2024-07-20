@@ -29,7 +29,7 @@ REVIEWS_CHROMA_PATH = "chroma_data"
 loader = CSVLoader(file_path=REVIEWS_CSV_PATH, source_column="review")
 reviews = loader.load()
 
-# create a ChromaDB instance from reviews using the default OpenAI embedding model
+# create a embeddings  from reviews using the default OpenAI embedding model
 reviews_vector_db = Chroma.from_documents(
     reviews,
     OpenAIEmbeddings(),
