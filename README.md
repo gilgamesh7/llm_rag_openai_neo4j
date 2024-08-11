@@ -13,3 +13,13 @@ Build a RAG chatbot in LangChain that uses Neo4j to retrieve data about the pati
 - [PATIENTS_CSV_PATH](https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/patients.csv)
 - [VISITS_CSV_PATH](https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/visits.csv)
 - [REVIEWS_CSV_PATH](https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/reviews.csv)
+
+
+# Graph Database
+## Hospital System Graph Database
+![Hospital System Graph Database](./documentation/Hospital_System_Graph_Database.png)
+## Hospital system node properties
+![Hospital system node properties](./documentation/Hospital_system_node_properties.png)
+## Hospital system relationship properties
+![Hospital system relationship properties](./documentation/Hospital_system_relationship_properties.png)
+
