@@ -23,3 +23,6 @@ Build a RAG chatbot in LangChain that uses Neo4j to retrieve data about the pati
 ## Hospital system relationship properties
 ![Hospital system relationship properties](./documentation/Hospital_system_relationship_properties.png)
 
+# Notes
+- If you have a toml file, you can install using this in a venv using pip by : python -m pip install .
+- 
