@@ -21,12 +21,10 @@ logger = logging.getLogger("LLM_RAG_NEO4J")
 
 # Get Configurations
 config = dotenv_values(".env") 
-print(f"{config=}")
+# print(f"{config=}")
 
 # LLM Model name
 HOSPITAL_QA_MODEL = config.get("HOSPITAL_QA_MODEL")
-print(f"{HOSPITAL_QA_MODEL=}")
-print(f"{config.get('NEO4J_URI')=}")
 
 # TEST CONNECTIVITY
 # from neo4j import GraphDatabase 
@@ -102,4 +100,9 @@ reviews_vector_chain.combine_documents_chain.llm_chain.prompt = review_prompt_te
 
 
 
+# Try out
+query = query = """What have patients said about hospital efficiency?
+Mention details from specific reviews."""
+response = reviews_vector_chain.invoke(query)
 
+print(response.get('result'))
