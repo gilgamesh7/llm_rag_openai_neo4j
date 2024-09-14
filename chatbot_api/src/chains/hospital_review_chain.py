@@ -99,10 +99,10 @@ reviews_vector_chain = RetrievalQA.from_chain_type(
 reviews_vector_chain.combine_documents_chain.llm_chain.prompt = review_prompt_template
 
 
+if __name__ == "__main__":
+    # Try out
+    query = query = """What have patients said about hospital efficiency?
+    Mention details from specific reviews."""
+    response = reviews_vector_chain.invoke(query)
 
-# Try out
-query = query = """What have patients said about hospital efficiency?
-Mention details from specific reviews."""
-response = reviews_vector_chain.invoke(query)
-
-print(response.get('result'))
+    print(response.get('result'))
