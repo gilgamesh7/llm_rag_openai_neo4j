@@ -1,4 +1,8 @@
 import os
+import sys
+import os
+
+import dotenv
 
 from langchain import hub
 from langchain_openai import ChatOpenAI
@@ -8,12 +12,17 @@ from langchain.agents import(
     AgentExecutor
 )
 
-# from chains.hospital_review_chain import reviews_vector_chain
-# from chains.hospital_cypher_chain import hospital_cypher_chain
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
+
+from chains.hospital_review_chain import reviews_vector_chain
+from chains.hospital_cypher_chain import hospital_cypher_chain
 from tools.wait_times import (
     get_current_wait_times,
     get_most_available_hospital,
 )
+
+
+dotenv.load_dotenv()
 
 HOSPITAL_AGENT_MODEL = os.getenv("HOSPITAL_AGENT_MODEL")
 
@@ -87,8 +96,6 @@ hospital_rag_agent_executor = AgentExecutor(
 )
 
 if __name__ == "__main__":
-    import dotenv
-    dotenv.load_dotenv()
 
     response = hospital_rag_agent_executor.invoke(
         {"input": "What is the wait time at Wallace-Hamilton?"}
@@ -97,5 +104,35 @@ if __name__ == "__main__":
 
     response = hospital_rag_agent_executor.invoke(
         {"input": "Which hospital has the shortest wait time?"}
+    )
+    print(response.get("output"))
+
+    response = hospital_rag_agent_executor.invoke(
+        {
+            "input": (
+                "What have patients said about their "
+                "quality of rest during their stay?"
+            )
+        }
+    )
+    print(response.get("output"))
+
+    response = hospital_rag_agent_executor.invoke(
+        {
+            "input": (
+                "Which physician has treated the "
+                "most patients covered by Cigna?"
+            )
+        }
+    )
+    print(response.get("output"))
+
+    response = hospital_rag_agent_executor.invoke(
+        {
+            "input": (
+                "Query the graph database to show me "
+                "the reviews written by patient 7674"
+            )
+        }
     )
     print(response.get("output"))

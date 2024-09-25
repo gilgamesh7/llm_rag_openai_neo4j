@@ -1,5 +1,5 @@
 import os
-from dotenv import dotenv_values
+from dotenv import load_dotenv
 import logging 
 
 from langchain.vectorstores.neo4j_vector import Neo4jVector
@@ -20,11 +20,11 @@ logging.basicConfig(level=logging.INFO, format="[{asctime}] - {funcName} - {mess
 logger = logging.getLogger("LLM_RAG_NEO4J")
 
 # Get Configurations
-config = dotenv_values(".env") 
-# print(f"{config=}")
+# Load environment variables
+load_dotenv()
 
 # LLM Model name
-HOSPITAL_QA_MODEL = config.get("HOSPITAL_QA_MODEL")
+HOSPITAL_QA_MODEL = os.getenv("HOSPITAL_QA_MODEL")
 
 # TEST CONNECTIVITY
 # from neo4j import GraphDatabase 
@@ -42,9 +42,9 @@ HOSPITAL_QA_MODEL = config.get("HOSPITAL_QA_MODEL")
 #     print(summary)
     
 # Create Chain
-os.environ["NEO4J_URI"] = config.get("NEO4J_URI")
-os.environ["NEO4J_USERNAME"] = config.get("NEO4J_USERNAME")
-os.environ["NEO4J_PASSWORD"] = config.get("NEO4J_PASSWORD")
+os.environ["NEO4J_URI"] = os.getenv("NEO4J_URI")
+os.environ["NEO4J_USERNAME"] = os.getenv("NEO4J_USERNAME")
+os.environ["NEO4J_PASSWORD"] = os.getenv("NEO4J_PASSWORD")
 neo4j_vector_index = Neo4jVector.from_existing_graph(
     embedding=OpenAIEmbeddings(), # The model used to create the embeddings
     index_name="reviews",
