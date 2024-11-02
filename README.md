@@ -6,6 +6,7 @@ Build a RAG chatbot in LangChain that uses Neo4j to retrieve data about the pati
 - [Source code](https://github.com/realpython/materials/tree/master/langchain-rag-app/)
 - [source code for embeddings-and-vector-databases-with-chromadb](https://github.com/realpython/materials/tree/master/embeddings-and-vector-databases-with-chromadb/)
 - [FastAPI Documentation for Hospital Chatbot](http://localhost:8000/docs#/)
+- [Final Chatbot URL](http://localhost:8501)
 
 # Data
 - [HOSPITALS_CSV_PATH](https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/hospitals.csv)
