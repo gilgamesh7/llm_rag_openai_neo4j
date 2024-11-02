@@ -15,13 +15,14 @@ async def invoke_agent_with_retry(query: str):
     This can help when there are intermittent connection issues
     to external APIs.
     """
+
     return await hospital_rag_agent_executor.ainvoke({"input": query})
 
 @app.get("/")
 async def get_status():
     return {"status": "running"}
 
-@app.post("/hosptal-rag-agent")
+@app.post("/hospital-rag-agent")
 async def query_hospital_agent(query: HospitalQueryInput)-> HospitalQueryOutput:
     query_response = await invoke_agent_with_retry(query.text)
     query_response["intermediate_steps"] = [

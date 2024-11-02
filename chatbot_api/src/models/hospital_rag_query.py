@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class HospitalQueryInput(BaseModel):
-    name: str
+    text: str
 
 class HospitalQueryOutput(BaseModel):
     input: str
