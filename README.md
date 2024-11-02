@@ -5,6 +5,7 @@ Build a RAG chatbot in LangChain that uses Neo4j to retrieve data about the pati
 - [Build an LLM RAG Chatbot With LangChain](https://realpython.com/build-llm-rag-chatbot-with-langchain/)
 - [Source code](https://github.com/realpython/materials/tree/master/langchain-rag-app/)
 - [source code for embeddings-and-vector-databases-with-chromadb](https://github.com/realpython/materials/tree/master/embeddings-and-vector-databases-with-chromadb/)
+- [FastAPI Documentation for Hospital Chatbot](http://localhost:8000/docs#/)
 
 # Data
 - [HOSPITALS_CSV_PATH](https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/hospitals.csv)
@@ -25,4 +26,4 @@ Build a RAG chatbot in LangChain that uses Neo4j to retrieve data about the pati
 
 # Notes
 - If you have a toml file, you can install using this in a venv using pip by : python -m pip install .
-- 
+- To deploy and run on local docker : docker-compose up --build
